@@ -1,0 +1,10 @@
+
+###
+GET https://localhost:5001/
+
+###
+GET https://localhost:5001/signIn
+
+
+###
+GET https://localhost:5001/signOut
