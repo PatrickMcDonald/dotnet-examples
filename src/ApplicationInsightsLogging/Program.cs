@@ -5,9 +5,8 @@ var instanceId = Guid.NewGuid().ToString();
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.AddApplicationInsights(
-    configureTelemetryConfiguration: config => config.ConnectionString = builder.Configuration.GetConnectionString("ApplicationInsights"),
-    configureApplicationInsightsLoggerOptions: options => { }
-);
+    builder.Configuration,
+    trace => trace.Properties.Add("Custom Property", "awesome-value"));
 
 var app = builder.Build();
 
